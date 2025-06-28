@@ -1,4 +1,3 @@
-```markdown
 # Olym3Chain
 
 Olym3Chain là một nền tảng blockchain Layer 1 được thiết kế dành cho những "người thử thách" – cá nhân và tổ chức đang phá vỡ các giới hạn để xây dựng tương lai. Với ba cơ chế đồng thuận sáng tạo: **Proof of Challenge**, **Proof of Contribution**, và **Proof of Reputation**, Olym3Chain tạo nên một mạng lưới công bằng, minh bạch và định hướng bởi năng lực thực chiến.
@@ -170,5 +169,5 @@ Join the Olym3Chain community and help build the future of blockchain technology
 Olym3Chain không chỉ là một blockchain. Đó là sân chơi công bằng cho mọi tài năng được chứng minh bằng thực lực, đóng góp và uy tín. Cùng xây dựng tương lai, nơi công nghệ và năng lực là thước đo thành công.  
 
 Olym3Chain is not just a blockchain. It’s a fair playground for all talents to shine through skill, contribution, and earned reputation. Let’s build a future where technology and merit define success.
-```
+
 
