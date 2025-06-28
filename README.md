@@ -112,9 +112,9 @@ Learning and testing systems powered by blockchain
 
 ## 👥 Đội Ngũ & Cố Vấn / Team & Advisors
 
-Olym3Chain được sáng lập bởi nhóm nhà phát triển, cố vấn và nhà tổ chức hackathon tại Việt Nam, kết nối trực tiếp với các trường đại học, cộng đồng blockchain và tổ chức đào tạo AI.
+Olym3Chain được sáng lập bởi nhóm nhà phát triển, cố vấn và nhà tổ chức hackathon tại Việt Nam, kết nối trực tiếp với các trường đại học, cao đẳng, trung cấp nghề, cộng đồng blockchain và tổ chức đào tạo AI & Blockchain.
 
-Olym3Chain is founded by a team of developers, advisors, and hackathon organizers in Vietnam, directly connected to universities, blockchain communities, and AI education hubs.
+Olym3Chain is founded by a team of developers, advisors, and hackathon organizers in Vietnam, directly connected to universities, colleges, vocational schools, blockchain communities, and AI & Blockchain education hubs.
 
 ---
 
