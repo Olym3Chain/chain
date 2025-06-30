@@ -8,7 +8,7 @@ Olym3Chain is a Layer 1 blockchain platform tailored for challengers – individ
 
 ## 🌐 Links
 
-- Website: [olym3.xyz](https://olym3.xyz)  
+- Website: [olym3.xyz](https://www.olym3.xyz)  
 - Blockchain Explorer: [olym3scan.xyz](https://olym3scan.xyz)  
 - GitHub: _[To be updated]_  
 - Documentation: _[To be updated]_  
