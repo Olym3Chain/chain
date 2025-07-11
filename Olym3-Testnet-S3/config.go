@@ -16,21 +16,25 @@
 //
 // You should have received a copy of the GNU Lesser General Public License
 // along with Erigon. If not, see <http://www.gnu.org/licenses/>.
+
 package params
+
 import (
-        "embed"
-        "encoding/json"
-        "fmt"
-        "math/big"
-        "path"
-        "github.com/erigontech/erigon-lib/chain"
-        "github.com/erigontech/erigon-lib/chain/networkname"
-        libcommon "github.com/erigontech/erigon-lib/common"
-        "github.com/erigontech/erigon/polygon/bor/borcfg"
-        "github.com/erigontech/erigon-lib/common/paths"
+    "embed"
+    "encoding/json"
+    "fmt"
+    "math/big"
+	"path"
+    "github.com/erigontech/erigon-lib/chain"
+    "github.com/erigontech/erigon-lib/chain/networkname"
+    libcommon "github.com/erigontech/erigon-lib/common"
+    "github.com/erigontech/erigon/polygon/bor/borcfg"
+	"github.com/erigontech/erigon-lib/common/paths"
 )
+
 //go:embed chainspecs
 var chainspecs embed.FS
+
 func readChainSpec(filename string) *chain.Config {
         f, err := chainspecs.Open(filename)
         if err != nil {
@@ -53,9 +57,10 @@ func readChainSpec(filename string) *chain.Config {
         }
         return spec
 }
+
 // Genesis hashes to enforce below configs on.
 var (
-        MainnetGenesisHash    = libcommon.HexToHash("0xd4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3")
+     MainnetGenesisHash    = libcommon.HexToHash("0xd4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3")
         HoleskyGenesisHash    = libcommon.HexToHash("0xb5f7f912443c940f21fd611f12828d75b534364ed9e95ca4e307729a4661bde4")
         SepoliaGenesisHash    = libcommon.HexToHash("0x25a5cc106eea7138acab33231d7160d69cb777ee0c2c553fcddf5138993e6dd9")
         HoodiGenesisHash      = libcommon.HexToHash("0xbbe312868b376a3001692a646dd2d7d1e4406380dfd86b98aa8a34d1557c971b")
@@ -65,22 +70,27 @@ var (
         GnosisGenesisHash     = libcommon.HexToHash("0x4f1dd23188aab3a76b463e4af801b52b1248ef073c648cbdc4c9333d3da79756")
         ChiadoGenesisHash     = libcommon.HexToHash("0xada44fd8d2ecab8b08f256af07ad3e777f17fb434f8f8e678b312f576212ba9a")
         TestGenesisHash       = libcommon.HexToHash("0x6116de25352c93149542e950162c7305f207bbc17b0eb725136b78c80aed79cc")
+    Olym3TestnetS3GenesisHash = libcommon.HexToHash("0xdbabbed39334fd59b612c675a555a9fbb13f9b1f1f56c15c4831603f09c9318b")
 )
+
 var (
-        GnosisGenesisStateRoot = libcommon.HexToHash("0x40cf4430ecaa733787d1a65154a3b9efb560c95d9e324a23b97f0609b539133b")
+    	GnosisGenesisStateRoot = libcommon.HexToHash("0x40cf4430ecaa733787d1a65154a3b9efb560c95d9e324a23b97f0609b539133b")
         ChiadoGenesisStateRoot = libcommon.HexToHash("0x9ec3eaf4e6188dfbdd6ade76eaa88289b57c63c9a2cde8d35291d5a29e143d31")
         TestGenesisStateRoot   = libcommon.HexToHash("0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421")
 )
+
 var (
-        // MainnetChainConfig is the chain parameters to run a node on the main network.
-        MainnetChainConfig = readChainSpec("chainspecs/mainnet.json")
-        // HoleskyChainConfi contains the chain parameters to run a node on the Holesky test network.
-        HoleskyChainConfig = readChainSpec("chainspecs/holesky.json")
-        // SepoliaChainConfig contains the chain parameters to run a node on the Sepolia test network.
-        SepoliaChainConfig = readChainSpec("chainspecs/sepolia.json")
-        // HoodiChainConfig contains the chain parameters to run a node on the Hoodi test network.
-        HoodiChainConfig = readChainSpec("chainspecs/hoodi.json")
-        // AllProtocolChanges contains every protocol change (EIPs) introduced
+    MainnetChainConfig       = readChainSpec("chainspecs/mainnet.json")
+    HoleskyChainConfig       = readChainSpec("chainspecs/holesky.json")
+    SepoliaChainConfig       = readChainSpec("chainspecs/sepolia.json")
+    HoodiChainConfig         = readChainSpec("chainspecs/hoodi.json")
+    AmoyChainConfig          = readChainSpec("chainspecs/amoy.json")
+    BorMainnetChainConfig    = readChainSpec("chainspecs/bor-mainnet.json")
+    BorDevnetChainConfig     = readChainSpec("chainspecs/bor-devnet.json")
+    GnosisChainConfig        = readChainSpec("chainspecs/gnosis.json")
+    ChiadoChainConfig        = readChainSpec("chainspecs/chiado.json")
+    Olym3TestnetS3ChainConfig = readChainSpec("chainspecs/olym3-testnet-s3.json")
+    // AllProtocolChanges contains every protocol change (EIPs) introduced
         // and accepted by the Ethereum core developers into the main net protocol.
         AllProtocolChanges = &chain.Config{
                 ChainID:                       big.NewInt(1337),
@@ -121,11 +131,6 @@ var (
                 LondonBlock:           big.NewInt(0),
                 Clique:                &chain.CliqueConfig{Period: 0, Epoch: 30000},
         }
-        AmoyChainConfig = readChainSpec("chainspecs/amoy.json")
-        BorMainnetChainConfig = readChainSpec("chainspecs/bor-mainnet.json")
-        BorDevnetChainConfig = readChainSpec("chainspecs/bor-devnet.json")
-        GnosisChainConfig = readChainSpec("chainspecs/gnosis.json")
-        ChiadoChainConfig = readChainSpec("chainspecs/chiado.json")
         CliqueSnapshot = NewSnapshotConfig(10, 1024, 16384, true, "")
         TestChainConfig = &chain.Config{
                 ChainID:               big.NewInt(1337),
@@ -158,6 +163,35 @@ var (
         }
         TestRules = TestChainConfig.Rules(0, 0)
 )
+
+func ChainConfigByChainName(chain string) *chain.Config {
+    switch chain {
+    case networkname.Mainnet:
+        return MainnetChainConfig
+    case networkname.Holesky:
+        return HoleskyChainConfig
+    case networkname.Sepolia:
+        return SepoliaChainConfig
+    case networkname.Hoodi:
+        return HoodiChainConfig
+    case networkname.Amoy:
+        return AmoyChainConfig
+    case networkname.BorMainnet:
+        return BorMainnetChainConfig
+    case networkname.BorDevnet:
+        return BorDevnetChainConfig
+    case networkname.Gnosis:
+        return GnosisChainConfig
+    case networkname.Chiado:
+        return ChiadoChainConfig
+    case networkname.Test:
+        return TestChainConfig
+    case networkname.Olym3TestnetS3:
+        return Olym3TestnetS3ChainConfig
+    default:
+        return nil
+    }
+}
 type ConsensusSnapshotConfig struct {
         CheckpointInterval uint64 // Number of blocks after which to save the vote snapshot to the database
         InmemorySnapshots  int    // Number of recent vote snapshots to keep in memory
@@ -166,7 +200,7 @@ type ConsensusSnapshotConfig struct {
         InMemory           bool
 }
 const cliquePath = "clique"
-func NewSnapshotConfig(checkpointInterval uint64, inmemorySnapshots int, inmemorySignatures int, inmemory bool, dbPath string>
+func NewSnapshotConfig(checkpointInterval uint64, inmemorySnapshots int, inmemorySignatures int, inmemory bool, dbPath string) *ConsensusSnapshotConfig {
         if len(dbPath) == 0 {
                 dbPath = paths.DefaultDataDir()
         }
@@ -178,83 +212,52 @@ func NewSnapshotConfig(checkpointInterval uint64, inmemorySnapshots int, inmemor
                 inmemory,
         }
 }
-func ChainConfigByChainName(chain string) *chain.Config {
-        switch chain {
-        case networkname.Mainnet:
-                return MainnetChainConfig
-        case networkname.Dev:
-                return AllCliqueProtocolChanges
-        case networkname.Holesky:
-                return HoleskyChainConfig
-        case networkname.Sepolia:
-                return SepoliaChainConfig
-        case networkname.Hoodi:
-                return HoodiChainConfig
-        case networkname.Amoy:
-                return AmoyChainConfig
-        case networkname.BorMainnet:
-                return BorMainnetChainConfig
-        case networkname.BorDevnet:
-                return BorDevnetChainConfig
-        case networkname.Gnosis:
-                return GnosisChainConfig
-        case networkname.Chiado:
-                return ChiadoChainConfig
-        case networkname.Test:
-                return TestChainConfig
-        default:
-                return nil
-        }
-}
-func GenesisHashByChainName(chain string) *libcommon.Hash {
-        switch chain {
-        case networkname.Mainnet:
-                return &MainnetGenesisHash
-        case networkname.Holesky:
-                return &HoleskyGenesisHash
-        case networkname.Sepolia:
-                return &SepoliaGenesisHash
-        case networkname.Hoodi:
-                return &HoodiGenesisHash
-        case networkname.Amoy:
-                return &AmoyGenesisHash
-        case networkname.BorMainnet:
-                return &BorMainnetGenesisHash
-        case networkname.BorDevnet:
-                return &BorDevnetGenesisHash
-        case networkname.Gnosis:
-                return &GnosisGenesisHash
-        case networkname.Chiado:
-                return &ChiadoGenesisHash
-        case networkname.Test:
-                return &TestGenesisHash
-        default:
-                return nil
-        }
-}
+
 func ChainConfigByGenesisHash(genesisHash libcommon.Hash) *chain.Config {
-        switch {
-        case genesisHash == MainnetGenesisHash:
-                return MainnetChainConfig
-        case genesisHash == HoleskyGenesisHash:
-                return HoleskyChainConfig
-        case genesisHash == SepoliaGenesisHash:
-                return SepoliaChainConfig
-        case genesisHash == HoodiGenesisHash:
-                return HoodiChainConfig
-        case genesisHash == AmoyGenesisHash:
-                return AmoyChainConfig
-        case genesisHash == BorMainnetGenesisHash:
-                return BorMainnetChainConfig
-        case genesisHash == BorDevnetGenesisHash:
-                return BorDevnetChainConfig
-        case genesisHash == GnosisGenesisHash:
-                return GnosisChainConfig
-        case genesisHash == ChiadoGenesisHash:
-                return ChiadoChainConfig
-        default:
-                return nil
-        }
+    switch {
+    case genesisHash == MainnetGenesisHash:
+        return MainnetChainConfig
+    case genesisHash == HoleskyGenesisHash:
+        return HoleskyChainConfig
+    case genesisHash == SepoliaGenesisHash:
+        return SepoliaChainConfig
+    case genesisHash == HoodiGenesisHash:
+        return HoodiChainConfig
+    case genesisHash == Olym3TestnetS3GenesisHash:
+        return Olym3TestnetS3ChainConfig
+    default:
+        return nil
+    }
+}
+
+
+func GenesisHashByChainName(chain string) *libcommon.Hash {
+    switch chain {
+    case networkname.Mainnet:
+        return &MainnetGenesisHash
+    case networkname.Holesky:
+        return &HoleskyGenesisHash
+    case networkname.Sepolia:
+        return &SepoliaGenesisHash
+    case networkname.Hoodi:
+        return &HoodiGenesisHash
+    case networkname.Amoy:
+        return &AmoyGenesisHash
+    case networkname.BorMainnet:
+        return &BorMainnetGenesisHash
+    case networkname.BorDevnet:
+        return &BorDevnetGenesisHash
+    case networkname.Gnosis:
+        return &GnosisGenesisHash
+    case networkname.Chiado:
+        return &ChiadoGenesisHash
+    case networkname.Test:
+        return &TestGenesisHash
+    case networkname.Olym3TestnetS3:
+        return &Olym3TestnetS3GenesisHash
+    default:
+        return nil
+    }
 }
 func NetworkIDByChainName(chain string) uint64 {
         config := ChainConfigByChainName(chain)
@@ -293,3 +296,11 @@ func hasChainPassedTerminalTD(chainConfig *chain.Config, currentTDProvider func(
         currentTD := currentTDProvider()
         return (currentTD != nil) && (terminalTD.Cmp(currentTD) <= 0)
 }
+
+
+
+
+
+
+
+
