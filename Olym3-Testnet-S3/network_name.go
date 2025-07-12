@@ -1,4 +1,3 @@
-                                                                                                                                                                                            /home/erigon/erigon/erigon-lib/chain/networkname/network_name.go                                                                                                                                                                                                       
 // Copyright 2024 The Erigon Authors
 // This file is part of Erigon.
 //
@@ -48,11 +47,3 @@ var All = []string{
         Test,
         Olym3TestnetS3,
 }
-
-
-
-
-
-
-
-
