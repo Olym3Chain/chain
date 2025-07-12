@@ -277,6 +277,7 @@ func isChainIDPoS(chainID *big.Int) bool {
                 HoodiChainConfig.ChainID,
                 GnosisChainConfig.ChainID,
                 ChiadoChainConfig.ChainID,
+		Olym3TestnetS3ChainConfig.ChainID,
         }
         for _, id := range ids {
                 if id.Cmp(chainID) == 0 {
