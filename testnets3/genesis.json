@@ -1,1 +1,74 @@
+                                                         
+{
+  "chainName": "olym3-testnet-season3",
+  "chainId": 256003,
+  "config": {
+    "chainId": 256003,
+    "homesteadBlock": 0,
+    "daoForkBlock": 0,
+    "daoForkSupport": true,
+    "eip150Block": 0,
+    "eip150Hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
+    "petersburgBlock": 0,
+    "istanbulBlock": 0,
+    "muirGlacierBlock": 0,
+    "berlinBlock": 0,
+    "londonBlock": 0,
+    "arrowGlacierBlock": 0,
+    "grayGlacierBlock": 0,
+    "terminalTotalDifficulty": 0,
+    "terminalTotalDifficultyPassed": true,
+    "shanghaiTime": 0,
+    "cancunTime": 0,
+    "pragueTime": 1742999832,
+    "blobSchedule": {
+      "cancun": {
+        "target": 3,
+        "max": 6,
+        "baseFeeUpdateFraction": 3338477
+      },
+      "prague": {
+        "target": 6,
+        "max": 9,
+        "baseFeeUpdateFraction": 5007716
+      }
+    },
+    "clique": {
+      "period": 5,
+      "epoch": 30000
+    },
+    "ethash": {}
+  },
+  "nonce": "0x0",
+  "timestamp": "0x0",
+  "extraData": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "gasLimit": "0x1c9c380",
+  "difficulty": "0x1",
+  "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "coinbase": "0x0000000000000000000000000000000000000000",
+  "alloc": {
+    "0xc596d8517a6c5bc7f48df5a4b55fd2382c5c4db7": {
+      "balance": "0xffffffffffffffffffffffff",
+      "comment": "Deposit Contract Address"
+    },
+    "0x84F7C0CAaCC4E92679b9eeBa3FEBdD9A90156e9D": {
+      "balance": "0xffffffffffffffffffffffff",
+      "comment": "Faucet Token Address"
+    }
+  },
+  "depositContractAddress": "0xc596d8517a6c5bc7f48df5a4b55fd2382c5c4db7",
+  "number": "0x0",
+  "gasUsed": "0x0",
+  "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+}
+
+
+
+
+
+
 
